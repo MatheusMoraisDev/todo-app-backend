@@ -1,22 +1,36 @@
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import { ApiProperty } from '@nestjs/swagger'
+import {
+  Column,
+  CreateDateColumn,
+  DeleteDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm'
 
 @Entity({ name: 'todos' })
 export class TodoEntity {
   @PrimaryGeneratedColumn('uuid')
-  id: string;
+  @ApiProperty()
+  id: string
 
   @Column({ name: 'task', type: 'varchar', length: 255 })
-  task: string;
+  @ApiProperty()
+  task: string
 
   @Column({ name: 'is_done', type: 'tinyint', width: 1 })
-  isDone: number;
+  @ApiProperty()
+  isDone: number
 
   @CreateDateColumn({ name: 'created_at' })
-  createdAt: string;
+  @ApiProperty()
+  createdAt: string
 
   @UpdateDateColumn({ name: 'updated_at' })
-  updatedAt: string;
+  @ApiProperty()
+  updatedAt: string
 
   @DeleteDateColumn({ name: 'deleted_at' })
-  deletedAt: string;
+  @ApiProperty()
+  deletedAt: string
 }
