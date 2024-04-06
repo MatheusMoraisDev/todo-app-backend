@@ -15,14 +15,13 @@ import { TodoService } from './todo.service'
 import { CreateTodoDto } from './dto/create-todo.dto'
 import { UpdateTodoDto } from './dto/update-todo.dto'
 import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger'
-import { query } from 'express'
 import { TodoQueryDto } from './dto/todo-query.dto'
 import { IndexTodoSwagger } from './swagger/index-todo-swagger'
 import { CreateTodoSwagger } from './swagger/create-todo-swagger'
 import { ShowTodoSwagger } from './swagger/show-todo-swagger'
 import { UpdateTodoSwagger } from './swagger/update-todo-swagger'
-import { BadRequestSwagger } from 'src/helpers/swagger/bad-request.swagger'
-import { NotFoundSwagger } from 'src/helpers/swagger/not-found.swagger'
+import { BadRequestSwagger } from '../../helpers/swagger/bad-request.swagger'
+import { NotFoundSwagger } from '../../helpers/swagger/not-found.swagger'
 
 @Controller('api/v1/todos')
 @ApiTags('todos')
